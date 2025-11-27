@@ -1,0 +1,83 @@
+"use client";
+import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUsers, faClock, faShieldAlt, faHandshake } from "@fortawesome/free-solid-svg-icons";
+
+export default function About() {
+  return (
+    <section id="about" className="py-30 px-6 md:px-20 bg-gray-50 dark:bg-gray-900">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="max-w-5xl mx-auto text-center"
+      >
+        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          About <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-rose-500">Visconto Group Inc.</span>
+        </h2>
+        <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto">
+          Visconto Group Inc. is a full-service staffing and workforce solutions company built on one belief — <strong>hiring should empower growth, not slow it down.</strong> We partner with organizations of every size to provide high-quality staffing solutions that align with business outcomes.
+        </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto mt-16"
+      >
+        <motion.div
+          whileHover={{ scale: 1.03 }}
+          className="p-8 bg-white dark:bg-gray-800 shadow-lg rounded-2xl border border-gray-200 dark:border-gray-700"
+        >
+          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Our Approach</h3>
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Our team blends human expertise with data-driven recruiting, helping clients reduce hiring time,
+            improve retention, and scale operations efficiently. What sets us apart isn’t just our reach —
+            it’s our commitment to fit, attention to detail, and long-term success. <strong>We don’t fill positions. We build partnerships.</strong>
+          </p>
+        </motion.div>
+
+        <motion.div
+          whileHover={{ scale: 1.03 }}
+          className="p-8 bg-white dark:bg-gray-800 shadow-lg rounded-2xl border border-gray-200 dark:border-gray-700"
+        >
+          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Our Values</h3>
+          <ul className="space-y-4 text-gray-700 dark:text-gray-300">
+            <li className="flex items-start gap-3">
+              <FontAwesomeIcon icon={faShieldAlt} className="text-blue-600 mt-1" />
+              <span><strong>Integrity First</strong> – Every hire is transparent, honest, and fair.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <FontAwesomeIcon icon={faUsers} className="text-green-600 mt-1" />
+              <span><strong>Client Success</strong> – Your business goals define our priorities.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <FontAwesomeIcon icon={faHandshake} className="text-purple-600 mt-1" />
+              <span><strong>Respect for Talent</strong> – Candidates are people, not profiles.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <FontAwesomeIcon icon={faClock} className="text-yellow-500 mt-1" />
+              <span><strong>Continuous Improvement</strong> – We evolve with markets, skills, and technology.</span>
+            </li>
+          </ul>
+        </motion.div>
+      </motion.div>
+
+      {/* <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className="max-w-5xl mx-auto mt-20 text-center"
+      >
+        <motion.a
+          whileHover={{ scale: 1.07 }}
+          href="#contact"
+          className="inline-block px-10 py-4 text-lg font-semibold rounded-full bg-blue-600 text-white shadow-xl hover:bg-blue-700 transition"
+        >
+          Start a Partnership
+        </motion.a>
+      </motion.div> */}
+    </section>
+  );
+}
