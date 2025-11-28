@@ -14,6 +14,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
     <section id="home" className="relative overflow-hidden py-30">
       {/* Background Blobs */}
@@ -25,27 +30,20 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* HERO */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <motion.h1
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              className="text-5xl sm:text-6xl font-extrabold leading-tight"
-            >
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeUp}
+            className="text-center mb-16"
+          >
+            <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight"    >
               Build Stronger Teams. <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-rose-500">
-                Faster Smarter
-              </span>
-            </motion.h1>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-rose-500"> Faster Smarter   </span>
+            </h1>
 
-            <motion.p
-              initial={{ y: 14, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.1, duration: 0.6 }}
-              className="text-lg text-slate-700 dark:text-slate-300 max-w-xl"
-            >
+            <p className="text-lg text-slate-700 dark:text-slate-300 max-w-xl" >
               Visconto Group Inc. helps companies of all sizes hire exceptional talent across technology, healthcare, finance, engineering, and more — without delays, risk, or overhead.
-            </motion.p>
+            </p>
 
             <div className="flex flex-wrap gap-4">
               <a href="#contact" className="px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-rose-500 text-white font-semibold shadow-lg hover:opacity-90 transition">
@@ -55,7 +53,7 @@ export default function Home() {
                 Join Our Talent Network
               </a>
             </div>
-          </div>
+          </motion.div>
 
           {/* IMAGE CARD */}
           <motion.div
@@ -84,7 +82,11 @@ export default function Home() {
         </div>
 
         {/* WHY CHOOSE VISCONTO */}
-        <section className="mt-24" id="why">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeUp}
+          className="mt-10" id="why">
           <h2 className="text-3xl font-bold mb-8 text-center">Why Clients Choose Visconto</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -109,10 +111,14 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-        </section>
+        </motion.div>
 
         {/* WHAT WE OFFER */}
-        <section className="mt-28">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeUp}
+          className="mt-20">
           <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -123,32 +129,64 @@ export default function Home() {
               { icon: faHandshake, title: "Workforce Consulting", desc: "Hiring strategy, compensation, planning, and retention." },
               { icon: faPeopleGroup, title: "Talent Pool Access", desc: "Priority access to 300,000+ vetted professionals." },
             ].map((item, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
+
                 viewport={{ once: true }}
                 className="p-7 rounded-2xl bg-white dark:bg-[#0c1622] border border-slate-200 dark:border-slate-700 hover:shadow-xl transition"
               >
                 <FontAwesomeIcon icon={item.icon} className="text-rose-500 text-3xl mb-4" />
                 <h3 className="font-semibold text-xl mb-3">{item.title}</h3>
                 <p className="text-sm opacity-80">{item.desc}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </section>
+        </motion.div>
 
-        {/* INDUSTRIES */}
-        <section className="mt-28 text-center" id="industries">
-          <h2 className="text-3xl font-bold mb-6">Industries We Serve</h2>
-          <p className="max-w-3xl mx-auto text-slate-600 dark:text-slate-300">
-            Technology • Healthcare • Finance • Engineering • Manufacturing • Retail • Telecom • Public Sector • Startups & Enterprise
-          </p>
-        </section>
+        {/* INDUSTRIES  WE SERVE*/}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeUp}
+          className="mt-28" id="industries">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-rose-500">
+              Industries We Serve
+            </h2>
+            <p className="mt-3 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+              We partner with clients across multiple high‑growth and mission‑critical sectors.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
+            {[
+              "Technology",
+              "Healthcare",
+              "Finance",
+              "Engineering",
+              "Manufacturing",
+              "Retail",
+              "Telecom",
+              "Public Sector",
+              "Startups",
+              "Enterprise",
+            ].map((industry, i) => (
+              <div
+                key={i}
+                className="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#0c1622] shadow hover:shadow-lg hover:-translate-y-1 transition-all text-center text-sm font-semibold text-slate-700 dark:text-slate-300"
+              >
+                {industry}
+              </div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* HOW WE WORK */}
-        <section className="mt-28" id="process">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeUp}
+          className="mt-28" id="process">
           <h2 className="text-3xl font-bold mb-10 text-center">How We Work</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
@@ -170,10 +208,14 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-        </section>
+        </motion.div>
 
         {/* TALENT MESSAGE */}
-        <section className="mt-28 max-w-4xl mx-auto text-center" id="talent">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeUp}
+          className="mt-28 max-w-4xl mx-auto text-center" id="talent">
           <h2 className="text-3xl font-bold mb-6">A Word About Our Talent</h2>
           <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
             We invest in candidate relationships — offering guidance, transparent communication, and ongoing support. When candidates feel valued, clients see the results.
@@ -181,18 +223,22 @@ export default function Home() {
           <a href="#join" className="inline-block mt-6 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-rose-500 text-white font-semibold shadow-lg hover:opacity-90 transition">
             Join Our Talent Network
           </a>
-        </section>
+        </motion.div>
 
         {/* FOOTER CTA */}
-        <section className="mt-32 text-center pb-16" id="contact">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeUp}
+          className="mt-32 text-center pb-16" id="contact">
           <h2 className="text-4xl font-extrabold mb-6">Let’s Build Something Great.</h2>
           <p className="max-w-2xl mx-auto text-slate-600 dark:text-slate-300 mb-6">
             Whether you need one specialist or a full team, Visconto Group Inc. delivers talent that drives impact.
           </p>
-          <a href="#contact-form" className="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-rose-500 text-white font-semibold shadow-lg hover:opacity-90 transition">
+          {/* <a href="#contact-form" className="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-rose-500 text-white font-semibold shadow-lg hover:opacity-90 transition">
             Talk to a Recruitment Strategist
-          </a>
-        </section>
+          </a> */}
+        </motion.div>
       </div>
     </section>
   );

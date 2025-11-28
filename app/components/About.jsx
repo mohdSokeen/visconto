@@ -5,7 +5,7 @@ import { faUsers, faClock, faShieldAlt, faHandshake } from "@fortawesome/free-so
 
 export default function About() {
   return (
-    <section id="about" className="py-30 px-6 md:px-20 bg-gray-50 dark:bg-gray-900">
+    <section id="about" className="py-30 px-6 md:px-20  dark:bg-gray-900">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
