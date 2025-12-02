@@ -71,9 +71,9 @@ export default function Navigation() {
       {/* Mobile dropdown */}
       {open && (
         <div className="mt-3 md:hidden bg-white/60 p-4 rounded-xl backdrop-blur-md border border-white/10">
-          <a className="block py-2 opacity-70 font-bold" href="#home">Home</a>
-          <a className="block py-2 opacity-70 font-bold" href="#services">Services</a>
-          <a className="block py-2 opacity-70 font-bold" href="#about">About</a>
+          <a className="block py-2 font-bold" href="#home">Home</a>
+          <a className="block py-2 font-bold" href="#services">Services</a>
+          <a className="block py-2 font-bold" href="#about">About</a>
           <div className="mt-4 flex items-center justify-start gap-4">
             <motion.a
               whileHover={{ scale: 1.15 }}

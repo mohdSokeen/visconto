@@ -17,8 +17,8 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="py-30">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+    <section id="services" className="py-0 px-6 md:px-20">
+      {/* <div className="max-w-7xl mx-auto px-6 lg:px-10"> */}
         {/* Header */}
         <motion.div
           initial="hidden"
@@ -166,7 +166,7 @@ export default function Services() {
             Join Our Talent Network
           </button>
         </motion.div>
-      </div>
+      {/* </div> */}
     </section>
   );
 }

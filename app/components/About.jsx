@@ -5,7 +5,7 @@ import { faUsers, faClock, faShieldAlt, faHandshake } from "@fortawesome/free-so
 
 export default function About() {
   return (
-    <section id="about" className="py-30 px-6 md:px-20  dark:bg-gray-900">
+    <section id="about" className="py-30 px-6 md:px-20">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -64,6 +64,35 @@ export default function About() {
         </motion.div>
       </motion.div>
 
+      {/* TALENT MESSAGE */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="mt-12 max-w-4xl mx-auto text-center" id="talent">
+        <h2 className="text-4xl font-bold mb-5">A Word About Our Talent</h2>
+        <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+          We invest in candidate relationships — offering guidance, transparent communication, and ongoing support. When candidates feel valued, clients see the results.
+        </p>
+        <a href="#join" className="inline-block mt-6 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-rose-500 text-white font-semibold shadow-lg hover:opacity-90 transition">
+          Join Our Talent Network
+        </a>
+      </motion.div>
+
+      {/* FOOTER CTA */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="mt-12 text-center pb-16" id="contact">
+        <h2 className="text-4xl font-extrabold mb-5">Let’s Build Something Great.</h2>
+        <p className="max-w-2xl mx-auto text-slate-600 dark:text-slate-300 mb-[-120px]">
+          Whether you need one specialist or a full team, Visconto Group Inc. delivers talent that drives impact.
+        </p>
+        {/* <a href="#contact-form" className="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-rose-500 text-white font-semibold shadow-lg hover:opacity-90 transition">
+            Talk to a Recruitment Strategist
+          </a> */}
+      </motion.div>
       {/* <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

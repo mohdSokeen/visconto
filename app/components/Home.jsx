@@ -66,13 +66,25 @@ export default function Home() {
               <div className="rounded-3xl p-1 bg-white/30 dark:bg-black/30 backdrop-blur-xl border border-white/10 shadow-2xl">
                 <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-white/40 to-white/10 dark:from-[#071018] dark:to-[#09131d]">
                   <div className="p-2 sm:p-2">
-                    <div className="h-64 sm:h-85 rounded-xl bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1080&auto=format&fit=crop')] bg-cover bg-center flex items-end text-white p-6">
-                      <div className="bg-gradient-to-t from-black/60 to-transparent p-4 rounded-md">
-                        <div className="font-semibold text-lg">Trusted Workforce Partners</div>
-                        <div className="text-xs opacity-80">
-                          Hire across Tech, Healthcare, Finance & more
+                    <div className="relative h-64 sm:h-85 rounded-xl overflow-hidden">
+
+                      {/* Image Tag */}
+                      <img
+                        src="/images/home.png"
+                        alt="Workforce Partners"
+                        className="w-full h-full object-cover"
+                      />
+
+                      {/* Overlay Text + Gradient */}
+                      <div className="absolute bottom-0 left-0 w-full p-6 flex items-end text-white">
+                        <div className="bg-gradient-to-t from-black/60 to-transparent p-4 rounded-md">
+                          <div className="font-semibold text-lg">Trusted Workforce Partners</div>
+                          <div className="text-xs opacity-80">
+                            Hire across Tech, Healthcare, Finance & more
+                          </div>
                         </div>
                       </div>
+
                     </div>
                   </div>
                 </div>
@@ -87,7 +99,9 @@ export default function Home() {
           whileInView="visible"
           variants={fadeUp}
           className="mt-10" id="why">
-          <h2 className="text-3xl font-bold mb-8 text-center">Why Clients Choose Visconto</h2>
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-rose-500">Why Clients Choose Visconto</span>
+          </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { icon: faClock, title: "Speed to Hire", desc: "Qualified professionals delivered in days — not months." },
@@ -118,8 +132,8 @@ export default function Home() {
           initial="hidden"
           whileInView="visible"
           variants={fadeUp}
-          className="mt-20">
-          <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
+          className="mt-8">
+          <h2 className="text-4xl font-bold mb-8 text-center">What We Offer</h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
@@ -148,10 +162,10 @@ export default function Home() {
           initial="hidden"
           whileInView="visible"
           variants={fadeUp}
-          className="mt-28" id="industries">
+          className="mt-8" id="industries">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-rose-500">
-              Industries We Serve
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-rose-500">Industries We Serve</span>
             </h2>
             <p className="mt-3 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
               We partner with clients across multiple high‑growth and mission‑critical sectors.
@@ -186,9 +200,9 @@ export default function Home() {
           initial="hidden"
           whileInView="visible"
           variants={fadeUp}
-          className="mt-28" id="process">
-          <h2 className="text-3xl font-bold mb-10 text-center">How We Work</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          className="mt-10" id="process">
+          <h2 className="text-4xl font-bold mb-10 text-center">How We Work</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { step: "1", title: "Understand Your Business", desc: "We begin with your challenges — not a resume dump." },
               { step: "2", title: "Curate the Right Fit", desc: "Technical specialists pre-screen candidates for skill + team fit." },
@@ -208,36 +222,6 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
-
-        {/* TALENT MESSAGE */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeUp}
-          className="mt-28 max-w-4xl mx-auto text-center" id="talent">
-          <h2 className="text-3xl font-bold mb-6">A Word About Our Talent</h2>
-          <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-            We invest in candidate relationships — offering guidance, transparent communication, and ongoing support. When candidates feel valued, clients see the results.
-          </p>
-          <a href="#join" className="inline-block mt-6 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-rose-500 text-white font-semibold shadow-lg hover:opacity-90 transition">
-            Join Our Talent Network
-          </a>
-        </motion.div>
-
-        {/* FOOTER CTA */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeUp}
-          className="mt-32 text-center pb-16" id="contact">
-          <h2 className="text-4xl font-extrabold mb-6">Let’s Build Something Great.</h2>
-          <p className="max-w-2xl mx-auto text-slate-600 dark:text-slate-300 mb-6">
-            Whether you need one specialist or a full team, Visconto Group Inc. delivers talent that drives impact.
-          </p>
-          {/* <a href="#contact-form" className="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-rose-500 text-white font-semibold shadow-lg hover:opacity-90 transition">
-            Talk to a Recruitment Strategist
-          </a> */}
         </motion.div>
       </div>
     </section>
