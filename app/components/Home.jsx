@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock, faUsers, faDollarSign, faShieldAlt, faHandshake, faCircleCheck, faUserTie, faLayerGroup, faPeopleGroup, } from "@fortawesome/free-solid-svg-icons";
+import { faClock, faUsers, faDollarSign, faShieldAlt, faHandshake, faCircleCheck, faUserTie, faLayerGroup, faPeopleGroup, faMicrochip, faBriefcaseMedical, faCogs, faIndustry, faStore, faSatelliteDish, faLandmark, faRocket, faBuilding } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
 
@@ -22,7 +22,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight"    >
+            <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight">
               Build Stronger Teams. <br />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-rose-500"> Faster Smarter   </span>
             </h1>
@@ -103,9 +103,10 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="p-6 rounded-2xl bg-white dark:bg-[#0c1622] shadow hover:shadow-xl transition border border-slate-200 dark:border-slate-700"
+                className="p-6 rounded-2xl bg-white/70 dark:bg-black/40 backdrop-blur border group shadow hover:shadow-xl transition-shadow"
+                // className="p-6 rounded-2xl bg-white dark:bg-[#0c1622] shadow group hover:shadow-xl transition border border-slate-200 dark:border-slate-700"
               >
-                <FontAwesomeIcon icon={item.icon} className="text-indigo-600 text-2xl mb-4" />
+                <FontAwesomeIcon icon={item.icon} className="text-indigo-600 text-3xl mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
                 <p className="text-sm opacity-80">{item.desc}</p>
               </motion.div>
@@ -131,11 +132,11 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-
                 viewport={{ once: true }}
-                className="p-7 rounded-2xl bg-white dark:bg-[#0c1622] border border-slate-200 dark:border-slate-700 hover:shadow-xl transition"
+                className="p-7 rounded-2xl bg-white/70 dark:bg-black/40 backdrop-blur border group shadow hover:shadow-xl transition-shadow"
+                // className="p-7 rounded-2xl bg-white dark:bg-[#0c1622] border border-slate-200 dark:border-slate-700 shadow group hover:shadow-xl transition"
               >
-                <FontAwesomeIcon icon={item.icon} className="text-rose-500 text-3xl mb-4" />
+                <FontAwesomeIcon icon={item.icon} className="text-rose-500 text-3xl mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="font-semibold text-xl mb-3">{item.title}</h3>
                 <p className="text-sm opacity-80">{item.desc}</p>
               </div>
@@ -148,38 +149,54 @@ export default function Home() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-8" id="industries">
-          <div className="text-center mb-12">
+          className="mt-16" id="industries"
+        >
+          <div className="text-center mb-14">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-rose-500">Industries We Serve</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-rose-500">
+                Industries We Serve
+              </span>
             </h2>
             <p className="mt-3 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              We partner with clients across multiple high‑growth and mission‑critical sectors.
+              We help organizations hire top-tier professionals across multiple high‑growth sectors.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
+          {/* INDUSTRY GRID WITH ICONS */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
             {[
-              "Technology",
-              "Healthcare",
-              "Finance",
-              "Engineering",
-              "Manufacturing",
-              "Retail",
-              "Telecom",
-              "Public Sector",
-              "Startups",
-              "Enterprise",
+              { name: "Technology", icon: faMicrochip },
+              { name: "Healthcare", icon: faBriefcaseMedical },
+              { name: "Finance", icon: faDollarSign },
+              { name: "Engineering", icon: faCogs },
+              { name: "Manufacturing", icon: faIndustry },
+              { name: "Retail", icon: faStore },
+              { name: "Telecom", icon: faSatelliteDish },
+              { name: "Public Sector", icon: faLandmark },
+              { name: "Startups", icon: faRocket },
+              { name: "Enterprise", icon: faBuilding },
             ].map((industry, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#0c1622] shadow hover:shadow-lg hover:-translate-y-1 transition-all text-center text-sm font-semibold text-slate-700 dark:text-slate-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                viewport={{ once: true }}
+                className="p-6 rounded-2xl bg-white/70 dark:bg-black/40 backdrop-blur border group shadow hover:shadow-xl hover:-translate-y-1 transition-all text-center"
+                // className="p-6 rounded-2xl bg-white/70 dark:bg-black/40 backdrop-blur border group shadow hover:shadow-xl hover:-translate-y-1 transition-all text-center"
               >
-                {industry}
-              </div>
+                <FontAwesomeIcon
+                  icon={industry.icon}
+                  className="text-indigo-600 dark:text-rose-400 text-3xl mb-3 group-hover:scale-110 transition-transform"
+                />
+                <div className="text-sm font-semibold text-slate-700 dark:text-slate-200">
+                  {industry.name}
+                </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
+
 
         {/* HOW WE WORK */}
         <motion.div
@@ -200,7 +217,8 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="p-8 text-center rounded-2xl bg-white dark:bg-[#0c1622] border border-slate-200 dark:border-slate-700"
+                className="p-8 text-center rounded-2xl bg-white/70 dark:bg-black/40 backdrop-blur border"
+                // className="p-8 text-center rounded-2xl bg-white dark:bg-[#0c1622] border border-slate-200 dark:border-slate-700"
               >
                 <div className="text-4xl font-bold text-indigo-500 mb-3">{item.step}</div>
                 <h3 className="font-semibold text-xl mb-2">{item.title}</h3>

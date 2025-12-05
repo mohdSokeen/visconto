@@ -28,7 +28,8 @@ export default function About() {
       >
         <motion.div
           whileHover={{ scale: 1.03 }}
-          className="p-8 bg-white dark:bg-gray-800 shadow-lg rounded-2xl border border-gray-200 dark:border-gray-700"
+          className="p-8 rounded-2xl bg-white/70 dark:bg-black/40 backdrop-blur border group shadow hover:shadow-xl transition-shadow"
+          // className="p-8 bg-white dark:bg-gray-800 shadow-lg rounded-2xl border border-gray-200 dark:border-gray-700"
         >
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Our Approach</h3>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -40,7 +41,8 @@ export default function About() {
 
         <motion.div
           whileHover={{ scale: 1.03 }}
-          className="p-8 bg-white dark:bg-gray-800 shadow-lg rounded-2xl border border-gray-200 dark:border-gray-700"
+          className="p-8 rounded-2xl bg-white/70 dark:bg-black/40 backdrop-blur border group shadow hover:shadow-xl transition-shadow"
+          // className="p-8 bg-white dark:bg-gray-800 shadow-lg rounded-2xl border border-gray-200 dark:border-gray-700"
         >
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Our Values</h3>
           <ul className="space-y-4 text-gray-700 dark:text-gray-300">
@@ -89,10 +91,8 @@ export default function About() {
         <p className="max-w-2xl mx-auto text-slate-600 dark:text-slate-300 mb-[-120px]">
           Whether you need one specialist or a full team, Visconto Group Inc. delivers talent that drives impact.
         </p>
-        {/* <a href="#contact-form" className="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-rose-500 text-white font-semibold shadow-lg hover:opacity-90 transition">
-            Talk to a Recruitment Strategist
-          </a> */}
       </motion.div>
+      
       {/* <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
