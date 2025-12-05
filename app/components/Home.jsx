@@ -1,26 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faClock,
-  faUsers,
-  faDollarSign,
-  faShieldAlt,
-  faHandshake,
-  faCircleCheck,
-  faUserTie,
-  faLayerGroup,
-  faPeopleGroup,
-} from "@fortawesome/free-solid-svg-icons";
+import { faClock, faUsers, faDollarSign, faShieldAlt, faHandshake, faCircleCheck, faUserTie, faLayerGroup, faPeopleGroup, } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
-  const fadeUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
 
   return (
-    <section id="home" className="relative overflow-hidden py-30">
+    <section id="home" className="relative overflow-hidden pt-[125px] pb-20">
       {/* Background Blobs */}
       <div aria-hidden className="absolute inset-0 -z-10">
         <div className="absolute -left-32 -top-32 w-[70vw] h-[70vw] rounded-full filter blur-3xl opacity-70 animate-blob bg-gradient-to-tr from-indigo-600 via-purple-500 to-rose-500" />
@@ -31,9 +17,9 @@ export default function Home() {
         {/* HERO */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={fadeUp}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="text-center mb-16"
           >
             <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight"    >
@@ -41,7 +27,7 @@ export default function Home() {
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-rose-500"> Faster Smarter   </span>
             </h1>
 
-            <p className="text-lg text-slate-700 dark:text-slate-300 max-w-xl" >
+            <p className="text-lg text-slate-700 dark:text-slate-300 max-w-xl pb-5" >
               Visconto Group Inc. helps companies of all sizes hire exceptional talent across technology, healthcare, finance, engineering, and more — without delays, risk, or overhead.
             </p>
 
@@ -60,7 +46,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
-            className="relative flex items-center justify-center"
+            className="relative flex items-center justify-center pb-5"
           >
             <div className="w-full max-w-md lg:max-w-lg">
               <div className="rounded-3xl p-1 bg-white/30 dark:bg-black/30 backdrop-blur-xl border border-white/10 shadow-2xl">
@@ -95,9 +81,9 @@ export default function Home() {
 
         {/* WHY CHOOSE VISCONTO */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeUp}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-10" id="why">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-rose-500">Why Clients Choose Visconto</span>
@@ -129,9 +115,9 @@ export default function Home() {
 
         {/* WHAT WE OFFER */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeUp}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-8">
           <h2 className="text-4xl font-bold mb-8 text-center">What We Offer</h2>
 
@@ -159,9 +145,9 @@ export default function Home() {
 
         {/* INDUSTRIES  WE SERVE*/}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeUp}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-8" id="industries">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -197,9 +183,9 @@ export default function Home() {
 
         {/* HOW WE WORK */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeUp}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-10" id="process">
           <h2 className="text-4xl font-bold mb-10 text-center">How We Work</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">

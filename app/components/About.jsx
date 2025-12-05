@@ -5,7 +5,7 @@ import { faUsers, faClock, faShieldAlt, faHandshake } from "@fortawesome/free-so
 
 export default function About() {
   return (
-    <section id="about" className="py-30 px-6 md:px-20">
+    <section id="about" className="scroll-mt-35 px-6 md:px-20">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -84,7 +84,7 @@ export default function About() {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="mt-12 text-center pb-16" id="contact">
+        className="mt-12 text-center pb-50" id="contact">
         <h2 className="text-4xl font-extrabold mb-5">Let’s Build Something Great.</h2>
         <p className="max-w-2xl mx-auto text-slate-600 dark:text-slate-300 mb-[-120px]">
           Whether you need one specialist or a full team, Visconto Group Inc. delivers talent that drives impact.
